@@ -1,0 +1,72 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;                                       
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 50px 24px 28px 24px; 
+    background-color: #FFFFFF;
+}
+
+.imagen1 .fondo {
+    display: block;
+    margin: 0 auto;
+}
+
+.imagen2 .escudo {
+    display: block;
+    margin: 0 auto;
+    transform: translateY(-180px); 
+}
+
+.info_tarjeta {
+    text-align: center;
+    width: 340px;
+    margin-top: -120px; 
+}
+
+.info_tarjeta h3 {
+    color: #181818;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-top: 15px; 
+    font-weight: 600;
+}
+
+.info_tarjeta p {
+    color: #4F4F4F;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    font-weight: 400;
+    margin-top: 10px; 
+}
+
+.boton button {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 20px;
+    background-color: #2F80ED;
+    padding: 12px 18px;
+    border: none;
+    width: 352px;
+    height: 44px;
+    border-radius: 6px;
+    margin-top: 30px; 
+}

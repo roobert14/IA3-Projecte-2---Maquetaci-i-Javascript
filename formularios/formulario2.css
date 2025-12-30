@@ -1,0 +1,169 @@
+/* BODY */
+body {
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/* CENTRAL */
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+/* IMAGEN */
+.imagen1 {
+    padding: 20px;
+    width: 1440px;
+    height: 68px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* LOGO */
+.logo {
+    width: 159px;
+    height: 24px;
+}
+
+/* TITULO */
+.titulo {
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+/* FORMULARIO */
+.formulario {
+    width: 401px;
+    margin-top: 30px;
+}
+
+/* CAMPOS */
+.campo1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.campo2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ETIQUETAS */
+.email1 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.email2 {
+    margin-bottom: 30px;
+}
+
+/* INPUTS */
+input {
+    padding: 11px 12px 12px 12px;
+    gap: 10px;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* BOTON PRINCIPAL */
+.email_button button {
+    width: 100%;
+    background-color: #2F80ED;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/* LINEA */
+.linea {
+    width: 100%;
+}
+
+.text_linea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.texto5 {
+    color: #4f4f4f;
+    margin-top: -20px;
+    background-color: white;
+    width: 200px;
+    padding: 0 10px;
+    margin-bottom: 25px;
+}
+
+/* BOTONES SECUNDARIOS */
+.boton_google {
+    width: 100%;
+    justify-content: space-around;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.boton_facebook {
+    width: 100%;
+    padding: 12px 18px;
+    gap: 10px;
+    background-color: #475993;
+    border: #E0E0E0 1px solid;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 15px;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* TEXTO PEQUEÑO */
+.Marcar {
+    color: #4F4F4F;
+    font-size: 14px;
+}
+
+/* TEXTO REGISTRO */
+.texto_registro {
+    text-align: center;
+    color: #4F4F4F;
+    margin-top: 50px;
+}
+
+.texto_registro a {
+    text-decoration: none;
+    color: #2F80ED;
+}

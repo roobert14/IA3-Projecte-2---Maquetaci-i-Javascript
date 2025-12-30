@@ -1,0 +1,97 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;                                       
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 183px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF;
+}
+
+.imagen1{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.imagen2{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.imagen3{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding-bottom: 10px;
+}
+
+
+
+.imagen1 img{
+    padding-left: 16px;
+    padding-right: 12px;
+}
+
+.imagen1 span{
+    color: #4F4F4F;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2%;
+}
+
+.imagen2 img{
+    padding-left: 16px;
+    padding-right: 12px;
+}
+
+.imagen2 span{
+    color: #4F4F4F;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2%;
+}
+
+.imagen3 img{
+    padding-left: 16px;
+    padding-right: 12px;
+}
+
+.imagen3 span{
+    color: #4F4F4F;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2%;
+}
+
+hr{
+    width: 99%;
+    border: 1px solid #E0E0E0;
+}
+
+
+

@@ -1,0 +1,99 @@
+/* BODY */
+body {
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/* CENTRAL */
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+/* IMAGEN */
+.imagen1 {
+    padding: 20px;
+    width: 1440px;
+    display: flex;
+}
+
+/* TITULO */
+.titulo {
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    width: 440px;
+    margin-bottom: 0;
+}
+
+/* SUBTITULO */
+.subtitulo {
+    width: 400px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+
+/* FORMULARIO */
+.formulario {
+    width: 401px;
+    margin-top: 30px;
+}
+
+/* ETIQUETAS */
+.email1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #181818;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+/* ENLACES */
+.azul {
+    text-decoration: none;
+    color: #2F80ED;
+}
+
+/* TEXTO REGISTRO */
+.texto_registro {
+    color: #4F4F4F;
+    margin-top: 0px;
+    text-align: start;
+    width: 400px;
+    font-size: 14px;
+}
+
+/* BOTON PRINCIPAL */
+.email_button button {
+    width: 100%;
+    background-color: #2F80ED;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}

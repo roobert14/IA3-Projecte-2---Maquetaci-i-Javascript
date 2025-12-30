@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="search.css">
+
+</head>
+<body>
+    <div class="central">
+        <header class="header">
+                <nav class="navegador">
+                    <div>
+                        <img class="imagen" src="/Imagenes/logowhite.svg" alt="logo">
+                    </div>
+                    <ul class="menu">
+                        <li><a class="home" href="">Home</a></li>
+                        <li><a class="lista" href="">Discover</a></li>
+                        <li><a class="lista" href="">Activities</a></li>
+                        <li><a class="lista" href="">About</a></li>
+                        <li><a class="lista" href="">Contact</a></li>
+                    </ul>
+                    <div class="imagenes_nav">
+                        <img src="/Imagenes/notification1.svg" alt="Notificacion">
+                        <img src="/Imagenes/chica.svg" alt="Foto de perfil">
+                    </div>
+                </nav>
+                <div class="formulario">
+                 <input class="local" type="text" placeholder="Melbourne">
+                 <input class="calendario" type="text" placeholder="Mar 18, 2022">
+                 <input class="calendario" type="text"  placeholder="March 20, 2022">
+                 <input class="usuario1" type="number"    placeholder="2 adult, 1 room">
+                <button class="boton_search">Search</button>
+                </div>
+        </header>
+
+        <main>
+        <div class="contenido_general">
+          <div class="lado_izquierdo">
+
+            <div class="buscar_propiedad">
+              <h3>Search by property name</h3>
+              <input type="text" placeholder="ej. Playa Westpalm" class="input_playa" />
+           </div>
+
+          <h2 class="titulo_filtro">Filter by</h2>
+
+          <div class="presupuesto">
+            <h3>Your budget per day</h3>
+
+                <div class="lista_precio">
+                    <ul>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>$0 - $200</span>
+                            </div>
+                            <p>200</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>$200 - $500</span>
+                            </div>
+                            <p>100</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>$500 - $1,000</span>
+                            </div>
+                            <p>15</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>$1,000 - $2,000</span>
+                            </div>
+                            <p>12</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>$2,000 - $5,000</span>
+                            </div>
+                            <p>230</p>
+                        </div>
+                        </li>
+                    </ul>
+                    </div>
+                <div class="personalizar_presupuesto">
+                    <span>Set your own budget</span>
+                    <img src="/Imagenes/cuadrado1.svg" alt="Toggle" />
+                </div>
+        </div>
+
+          <div class="valoracion">
+            <h3>Rating</h3>
+            <div class="contenedor_estrellas">
+              <p class="mostrar">Show only ratings more than</p>
+              <ul>
+                <li>1 <img src="/Imagenes/estrella.svg" alt="Estrellas" /></li>
+                <li>2 <img src="/Imagenes/estrella.svg" alt="Estrellas" /></li>
+                <li>3 <img src="/Imagenes/estrella.svg" alt="Estrellas" /></li>
+                <li>4 <img src="/Imagenes/estrella.svg" alt="Estrellas" /></li>
+                <li>5 <img src="/Imagenes/estrella.svg" alt="Estrellas" /></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="filtros_populares">
+            <h3>Popular Filters</h3>
+
+            <div class="lista_precio">
+                    <ul>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Free cancellation</span>
+                            </div>
+                            <p>200</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Spa</span>
+                            </div>
+                            <p>100</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Beach front</span>
+                            </div>
+                            <p>15</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Hot tub/ jacuzzi</span>
+                            </div>
+                            <p>12</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Book without credit card</span>
+                            </div>
+                            <p>230</p>
+                        </div>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>No prepayment</span>
+                            </div>
+                            <p>12</p>
+                        </div>
+                        </li>
+                    </ul>
+            </div>
+                    
+          </div>
+
+          <div class="actividades">
+            <h3>Activities</h3>
+
+             <div class="lista_precio">
+                    <ul>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Fishing</span>
+                            </div>
+                            <p>200</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Hiking</span>
+                            </div>
+                            <p>100</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Beach</span>
+                            </div>
+                            <p>15</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Cycling</span>
+                            </div>
+                            <p>12</p>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Sauna</span>
+                            </div>
+                            <p>230</p>
+                        </div>
+                        <div class="lado_num">
+                            <div class="izquierda">
+                            <input type="checkbox" />
+                            <span>Night lights</span>
+                            </div>
+                            <p>12</p>
+                        </div>
+                        </li>
+                    </ul>
+        </div>
+          </div>
+
+        </div>
+
+        <div class="lado_derecho">
+          <div class="titulo_derecho">
+            <h2>Melbourne : 2,582 search results found</h2>
+          </div>
+          <div class="subtitulo_derecho">
+            <div class="contenedor_derecho">
+              <ul>
+                <li class="lista1"> Our top picks</li>
+                <li>Hotel and apartments</li>
+                <li>Residence</li>
+                <li>Resort</li>
+                <li class="lista2">Shared Space</li>
+              </ul>
+            </div>
+            <div class="boton_derecho">
+              <span>Sort by</span>
+              <p>Recommended</p>
+            </div>
+          </div>
+
+          <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/cartel1.png" alt="Cartel 1">
+              </div>
+              <div class="informacion_carta">
+                <h1>Lakeside Motel Warefront</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+              <div class="precio_carta">
+                <div class="bt1_carta">
+                <button class="btn1">Book now and receive 15% off</button>
+                </div> 
+                <div class="bt2_carta">
+                  <button class="btn2">5% off</button>
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel.svg" alt="Dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+          </div>
+
+          <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/cartel2.png" alt="Cartel 2">
+              </div>
+              <div class="informacion_carta">
+                <h1>Julia Dens Resort</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+                <div class="bt3_carta">
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinero2.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+
+              <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta3.svg" alt="cartel 3">
+              </div>
+              <div class="informacion_carta">
+                <h1>Aghnim Scepter Hotel</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+              <div class="precio_carta2">
+                <div class="bt1_carta">
+                <button class="btn1">Receive 30% discount on a restaurant </button>
+                </div> 
+                <div class="bt4_carta">
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel3.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+          </div>
+
+          <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta4.png" alt="cartel 4">
+              </div>
+              <div class="informacion_carta">
+                <h1>Marineford Hotel</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+                <div class="bt5_carta">
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel2.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+
+              <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta5.png" alt="cartel 5">
+              </div>
+              <div class="informacion_carta">
+                <h1>Shanghai Open House</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+                <div class="bt5_carta">
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel6.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+
+              <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta6.png" alt="cartel 6">
+              </div>
+              <div class="informacion_carta">
+                <h1>Ocean Waves Resort</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+                <div class="bt5_carta">
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel4.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+
+               <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta7.png" alt="cartel 7">
+              </div>
+              <div class="informacion_carta">
+                <h1>Maimi City frontier</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+              <div class="precio_carta5">
+                <div class="bt1_carta">
+                <button class="btn1">Book now and receive 15% off</button>
+                </div> 
+                <div class="bt2_carta">
+                  <button class="btn2">15% off</button>
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel7.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+          </div>
+
+              <div class="carta1">
+              <div class="imagen_carta">
+                <img src="/Imagenes/carta8.png" alt="cartel 8">
+              </div>
+              <div class="informacion_carta">
+                <h1>Lakeside Motel Warefront</h1>
+                  <div class="estrella_carta"> 
+                    <img src="/Imagenes/estrellafour.svg" alt="valoracion">
+                    <span>4.5 (1200 Reviews)</span>
+                  </div>
+                <p class="p1">Live a little and celbrate with champagne</p>
+                <p class="p2">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+                <button>See availability</button>
+              </div>
+              <div class="precio_carta4">
+                <div class="bt2_carta">
+                  <button class="btn2">15% off</button>
+                  <p class="p1_carta">1 room 2 days</p>
+                  <img class="img1" src="/Imagenes/dinerohotel5.svg" alt="dinero">
+                  <p class="p2_carta">Includes taxes and fees</p>
+                </div>
+              </div>
+          </div>
+
+            <div class="btn_resultados">
+                <button>Load more results</button>
+            </div>
+          </div>   
+        </div>
+
+        <div class="COVID">
+                <p>Check the latest COVID-19 restrictions before you travel. <a href="">Learn more</a></p>
+        </div>
+
+         <div class="footer_lista">
+                <div class="logo_footer">
+                    <img src="/Imagenes/logo_footer.svg" alt="Logo">
+                </div>
+
+                <div class="listas_global">
+                    <ul class="lista1_foot">
+                        <li class="titulo">Company</li>
+                        <li>About</li>
+                        <li>Jobs</li>
+                        <li>Newsroom</li>
+                        <li>Advertising</li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+                <div class="listas_global">
+                    <ul class="lista2_foot">
+                        <li class="titulo">Explore</li>
+                        <li>Australia</li>
+                        <li>New Zealand</li>
+                        <li>United States America (USA)</li>
+                        <li>Maldives</li>
+                        <li>Singapore</li>
+                        <li class="span">See more</li>
+                    </ul>
+                </div>
+                 <div class="listas_global">
+                    <ul class="lista3_foot">
+                        <li class="titulo">Terms and Policies</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of use</li>
+                        <li>Acessibility</li>
+                        <li>Reward system policy</li>
+                    </ul>
+                </div>
+                <div class="listas_global">
+                    <ul class="lista4_foot">
+                        <li class="titulo">Help</li>
+                        <li>Support</li>
+                        <li>Cancel your bookings</li>
+                        <li>Use Coupon</li>
+                        <li>Refund Policies</li>
+                        <li>International Travel Documents</li>
+                    </ul>
+                </div>
+            </div>
+          </main>
+
+
+            <footer>
+                <div class="imagen_footer">
+                    <img src="/Imagenes/logo2_footer.svg" alt="logo footer">
+                </div>
+            </footer>
+      </div>
+</body>
+</html>
