@@ -59,19 +59,20 @@ export const hotelsPopulars = [
   {
     id: "galeria3",
     nombre: "Rocce Graham resort",
-    imagen: "../Imagenes/hotel1.png",
+    imagen: "../Imagenes/hotel2.png",
     propiedades: 1278,
   },
   {
     id: "galeria3",
     nombre: "Fireside Dinners",
-    imagen: "../Imagenes/hotel1.png",
+    imagen: "../Imagenes/hotel3.png",
     propiedades: 480,
   },
   {
     id: "galeria3",
     nombre: "Oculous Inn Stay",
-    imagen: "../Imagenes/hotel1.png",
+    imagen: "../Imagenes/hotel4.png",
     propiedades: 320,
   },
+  
 ];

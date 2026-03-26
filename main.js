@@ -16,7 +16,6 @@ for (let i = 0; i < ofertes.length; i++) {
   hotel2.innerHTML += `
     <div class="sydney">
       <div class="galeria2">
-      
         <img src="${ofertes[i].imagen}" alt="Imagen1" >
         </div>
          <div class="texto_imagenes2">
@@ -29,11 +28,13 @@ for (let i = 0; i < ofertes.length; i++) {
 import { hotelsPopulars } from "./data.js";
 
 const hotel3 = document.querySelector("#hotelsPopulars");
-for (let i = 0; i < hhotelsPopulars.length; i++) {
+for (let i = 0; i < hotelsPopulars.length; i++) {
   hotel3.innerHTML += `
     <div class="australia">
+      <div class="galeria3">
         <img src="${hotelsPopulars[i].imagen}" alt="Imagen1" >
-        <h3>${hotelsPopulars[i].nombre}</h3>
+        </div>
+        <h2>${hotelsPopulars[i].nombre}</h2>
         <p>${hotelsPopulars[i].propiedades} propiedades</p>
     </div>`;
 }
