@@ -31,10 +31,8 @@ const hotel3 = document.querySelector("#hotelsPopulars");
 for (let i = 0; i < hotelsPopulars.length; i++) {
   hotel3.innerHTML += `
     <div class="australia">
-      <div class="galeria3">
         <img src="${hotelsPopulars[i].imagen}" alt="Imagen1" >
-        </div>
-        <h2>${hotelsPopulars[i].nombre}</h2>
+        <h3>${hotelsPopulars[i].nombre}</h3>
         <p>${hotelsPopulars[i].propiedades} propiedades</p>
     </div>`;
 }

@@ -23,6 +23,7 @@ export const hoteles = [
     imagen: "../Imagenes/greece.png",
     propiedades: 320,
   },
+  
 ];
 
 export const ofertes = [
