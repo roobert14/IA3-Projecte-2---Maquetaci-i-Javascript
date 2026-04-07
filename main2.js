@@ -4,10 +4,10 @@ const contenedor = document.querySelector("#precios");
 
 const rangos = searchResultsData.filters.budgetRanges;
 
-let html = "";
+let html1 = "";
 
 for (let i = 0; i < rangos.length; i++) {
-  html += `
+  html1 += `
     <div class="lista_precio">
       <div class="lado_num">
         <div class="izquierda">
@@ -19,7 +19,7 @@ for (let i = 0; i < rangos.length; i++) {
     </div>`;
 }
 
-contenedor.innerHTML = html;
+contenedor.innerHTML = html1;
 
 
 const contenedor2 = document.querySelector("#precios2");
@@ -104,7 +104,6 @@ for (let i = 0; i < rangos4.length; i++) {
 }
 
 contenedor4.innerHTML = html4;
-
 
 
 
