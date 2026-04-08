@@ -101,6 +101,7 @@ main {
   color: #FFFFFF;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  margin-bottom: -220px;
 }
 
 .header_formulario p {
@@ -125,6 +126,7 @@ main {
   background-color: #FFFFFF;
   border-radius: 6px;
   box-sizing: border-box;
+  margin-top: -35px;
 }
 
 .fila-nombres,
