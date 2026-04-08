@@ -114,3 +114,32 @@ let html3 = "";
 contenedor3.innerHTML = html3;
 
 
+const contenedor4 = document.querySelector("#precios4");
+const hotel4 = productDetailData.rooms;
+
+
+
+let html4 = `<div class="galeria_global">`;
+
+    for (let i = 0; i < hotel4.length; i++) {
+  html4 += `
+      <div class="carta_galeria1">
+          <img src="${hotel4[i].img_hab}">
+            <div class="info_galeria1"> 
+              <h3>${hotel4[i].name}</h3>
+              <ul>
+                <li class="bolso_gris">${hotel4.price} ${hotel4.currency}</li>
+                <li class="piscina_gris">Sleeps ${hotel4.sleeps}</li>
+                <li class="like_gris">${hotel4.beds}</li>
+                <li class="boton">${hotel4[i].boton}</li>
+              </ul>
+            </div>
+        </div>
+    `;
+
+    }
+
+contenedor4.innerHTML = html4;
+
+
+

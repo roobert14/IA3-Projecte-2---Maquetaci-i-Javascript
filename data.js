@@ -271,6 +271,7 @@ export const productDetailData = {
   promoCard: {
     title: "20% off\nUse Promotional\nCoupon Code:\nOrlando",
     img: "../Imagenes/logowhite.svg",
+    img_persona: "../Imagenes/persona.png",
   },
   rooms: [
     {
@@ -280,6 +281,8 @@ export const productDetailData = {
       currency: "$",
       sleeps: 3,
       beds: "1 double bed and 1 twin bed",
+      img_hab: "../Imagenes/habitacion.png", 
+      boton: "Reserve suite",
     },
     {
       id: "standard-twin-queen-bed",
@@ -288,6 +291,8 @@ export const productDetailData = {
       currency: "$",
       sleeps: 3,
       beds: "1 double bed and 1 twin bed",
+      img_hab: "../Imagenes/habitacion2.png",
+      boton: "Reserve suite",
     },
   ],
 };
