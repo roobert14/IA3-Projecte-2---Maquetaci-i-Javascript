@@ -6,7 +6,7 @@ let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 let client = createClient(supabaseUrl, supabaseAnonKey);
 
 
-// 🔹 TRIPS
+
 async function carregarPrecios() {
 
   let { data, error } = await client.from("my_trips").select("*");
@@ -71,7 +71,7 @@ async function carregarPrecios() {
 }
 
 
-// 🔹 DESTINOS
+
 async function carregarDestinos() {
 
   let { data, error } = await client
@@ -108,7 +108,6 @@ async function carregarDestinos() {
 }
 
 
-// 🔥 CARGAR TODO
 document.addEventListener("DOMContentLoaded", () => {
   carregarPrecios();
   carregarDestinos();

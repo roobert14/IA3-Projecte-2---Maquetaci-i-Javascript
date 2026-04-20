@@ -5,7 +5,7 @@ let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 
 let client = createClient(supabaseUrl, supabaseAnonKey);
 
-// 🔹 HOTELES
+
 async function carregarNoticies() {
   let { data, error } = await client.from("hoteles").select("*");
 
@@ -27,7 +27,6 @@ async function carregarNoticies() {
   }
 }
 
-// 🔹 OFERTES
 async function carregarOfertes() {
   let { data, error } = await client.from("ofertes").select("*");
 
@@ -53,7 +52,7 @@ async function carregarOfertes() {
   }
 }
 
-// 🔹 HOTELS POPULARS (AHORA TAMBIÉN SUPABASE)
+
 async function carregarHotelsPopulars() {
   let { data, error } = await client.from("hotels_populars").select("*");
 
@@ -75,7 +74,7 @@ async function carregarHotelsPopulars() {
   }
 }
 
-// 🔥 CARGAR TODO
+
 document.addEventListener("DOMContentLoaded", () => {
   carregarNoticies();
   carregarOfertes();
