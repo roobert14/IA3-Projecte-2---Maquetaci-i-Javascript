@@ -1,41 +1,86 @@
-import { hoteles } from "./data.js";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-const hotel = document.querySelector("#hoteles");
-for (let i = 0; i < hoteles.length; i++) {
-  hotel.innerHTML += `
-    <div class="australia">
-        <img src="${hoteles[i].imagen}" alt="Imagen1" >
-        <h3>${hoteles[i].nombre}</h3>
-        <p>${hoteles[i].propiedades} propiedades</p>
-    </div>`;
+let supabaseUrl = "https://gkzdxpdrphndxvzxnwbz.supabase.co";
+let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdremR4cGRycGhuZHh2enhud2J6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzNDA5ODcsImV4cCI6MjA5MTkxNjk4N30.mv_304f8c0_LCfcRKPC3ww9TRrTS4stsbKHZg7ARoCM";
+
+let client = createClient(supabaseUrl, supabaseAnonKey);
+
+// 🔹 HOTELES
+async function carregarNoticies() {
+  let { data, error } = await client.from("hoteles").select("*");
+
+  if (error) {
+    console.error("Error hoteles:", error);
+    return;
+  }
+
+  const contenedor = document.querySelector("#hoteles");
+  contenedor.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    contenedor.innerHTML += `
+      <div class="australia">
+        <img src="${data[i].imagen}" alt="Imagen">
+        <h3>${data[i].nombre}</h3>
+        <p>${data[i].propiedades} propiedades</p>
+      </div>`;
+  }
 }
 
-import { ofertes } from "./data.js";
-const hotel2 = document.querySelector("#ofertes");
-for (let i = 0; i < ofertes.length; i++) {
-  hotel2.innerHTML += `
-    <div class="sydney">
-      <div class="galeria2">
-        <img src="${ofertes[i].imagen}" alt="Imagen1" >
+// 🔹 OFERTES
+async function carregarOfertes() {
+  let { data, error } = await client.from("ofertes").select("*");
+
+  if (error) {
+    console.error("Error ofertes:", error);
+    return;
+  }
+
+  const contenedor = document.querySelector("#ofertes");
+  contenedor.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    contenedor.innerHTML += `
+      <div class="sydney">
+        <div class="galeria2">
+          <img src="${data[i].imagen}" alt="Imagen">
         </div>
-         <div class="texto_imagenes2">
-          <h3>${ofertes[i].titol}</h3>
-          <p>${ofertes[i].descripcio}</p>
-         </div>
-    </div>`;
+        <div class="texto_imagenes2">
+          <h3>${data[i].titol}</h3>
+          <p>${data[i].descripcio}</p>
+        </div>
+      </div>`;
+  }
 }
 
-import { hotelsPopulars } from "./data.js";
+// 🔹 HOTELS POPULARS (AHORA TAMBIÉN SUPABASE)
+async function carregarHotelsPopulars() {
+  let { data, error } = await client.from("hotels_populars").select("*");
 
-const hotel3 = document.querySelector("#hotelsPopulars");
-for (let i = 0; i < hotelsPopulars.length; i++) {
-  hotel3.innerHTML += `
-    <div class="australia">
-        <img src="${hotelsPopulars[i].imagen}" alt="Imagen1" >
-        <h3>${hotelsPopulars[i].nombre}</h3>
-        <p>${hotelsPopulars[i].propiedades} propiedades</p>
-    </div>`;
+  if (error) {
+    console.error("Error populars:", error);
+    return;
+  }
+
+  const contenedor = document.querySelector("#hotelsPopulars");
+  contenedor.innerHTML = "";
+
+  for (let i = 0; i < data.length; i++) {
+    contenedor.innerHTML += `
+      <div class="australia">
+        <img src="${data[i].imagen}" alt="Imagen">
+        <h3>${data[i].nombre}</h3>
+        <p>${data[i].propiedades} propiedades</p>
+      </div>`;
+  }
 }
+
+// 🔥 CARGAR TODO
+document.addEventListener("DOMContentLoaded", () => {
+  carregarNoticies();
+  carregarOfertes();
+  carregarHotelsPopulars();
+});
 
 
 
