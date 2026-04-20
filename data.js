@@ -263,49 +263,5 @@ export const checkoutData = {
 };
 
 export const myTripsData = {
-  trips: [
-    {
-      bookingId: "b1",
-      hotelId: "lakeside-motel-warefront",
-      hotelName: "Lakeside Motel Warefront",
-      rating: 4.5,
-      reviewsCount: "(1200 Reviews)",
-      policy: "Non refundable",
-      checkIn: "Check in: Sunday, March 18, 2022",
-      checkOut: "Check out: Tuesday, March 20, 2022",
-      stayNights: "2 night stay",
-      rooms: "1 room 2 days",
-      oldPrice: "../Imagenes/dinerohotel.svg",
-      img_hotel: "../Imagenes/mytrips.png",
-      img_stars: "/Imagenes/estrellafour.svg",
-      taxes: "Includes taxes and fees",
-      boton: "View trip details",
-    },
-  ],
-  suggestedDestinations: [
-    {
-      id: "australia",
-      nom: "Australia",
-      imatgeUrl: "../Imagenes/australia.png",
-      propietatsCount: "2246 properties",
-    },
-    {
-      id: "japan",
-      nom: "Japan",
-      imatgeUrl: "../Imagenes/japan.png",
-      propietatsCount: "1278 properties",
-    },
-    {
-      id: "new-zealand",
-      nom: "New Zealand",
-      imatgeUrl: "../Imagenes/newzealand.png",
-      propietatsCount: "480 properties",
-    },
-    {
-      id: "greece",
-      nom: "Greece",
-      imatgeUrl: "../Imagenes/greece.png",
-      propietatsCount: "320 properties",
-    },
-  ],
+  
 };
