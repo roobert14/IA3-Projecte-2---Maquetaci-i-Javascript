@@ -1,145 +1,195 @@
-import { productDetailData } from "./data.js";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-const contenedor = document.querySelector("#precios");
+let supabaseUrl = "https://gkzdxpdrphndxvzxnwbz.supabase.co";
+let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdremR4cGRycGhuZHh2enhud2J6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzNDA5ODcsImV4cCI6MjA5MTkxNjk4N30.mv_304f8c0_LCfcRKPC3ww9TRrTS4stsbKHZg7ARoCM";
 
-const hotel = productDetailData.hotel;
-const hotel2 = productDetailData.topFacilities;
-
-let listaHTML = "";
+let client = createClient(supabaseUrl, supabaseAnonKey);
 
 
-for (let i = 0; i < 3; i++) {
-  listaHTML += `
-    <li class="${hotel2[i].id}">
-      ${hotel2[i].label}
-    </li>
-  `;
-}
 
-let listaHTML2 = "";
+async function carregarHotel() {
 
+  let { data: hotelData } = await client
+    .from("hotel_detail_cards")
+    .select("*")
+    .limit(1);
 
-for (let i = 3; i < 6; i++) {
-  listaHTML2 += `
-    <li class="${hotel2[i].id}">
-      ${hotel2[i].label}
-    </li>
-  `;
-}
+  // 🔥 FACILITIES (lista)
+  let { data: facilities } = await client
+    .from("hotel_top_facilities")
+    .select("*");
 
-let html = `
-  <div class="contenido_izquierda">
-    <h2>${hotel.name}</h2>
+  if (!hotelData || !facilities) return;
 
-    <div class="estrella_carta">
-      <img src="${hotel.img}">
-      <span>${hotel.rating} (${hotel.reviewsCount})</span>
-    </div>
+  let hotel = hotelData[0];
 
-    <div class="blue_localizacion">
-      <p>${hotel.address}</p>
-    </div>
-
-    <div class="carta_blanca">
-      <div class="texto_carta">
-        <h3>${hotel.subtitulo}</h3>
-        <p>${hotel.overviewText}</p>
-      </div>
-
-      <div class="linea">
-        <hr>
-      </div>
-
-      <div class="lista">
-        <div class="titulo_carta">
-          <h3>${hotel.titulo_top}</h3>
-        </div>
-
-        <div class="lista_carta">
-          <div class="listas_carta">
-            <ul>
-              ${listaHTML}
-            </ul>
-          </div>
-          <div class="listas_carta">
-            <ul>
-            ${listaHTML2}
-            </ul>
-          </div>  
-        </div>
-      </div>
-    </div>
-  </div>
+  // 🔹 LISTA 1
+  let listaHTML = "";
+  for (let i = 0; i < 3; i++) {
+    listaHTML += `
+  <li class="${facilities[i].facility_id}">
+    ${facilities[i].label}
+  </li>
 `;
 
-contenedor.innerHTML = html;
+  }
 
+  // 🔹 LISTA 2
+  let listaHTML2 = "";
+  for (let i = 3; i < 6; i++) {
+    listaHTML2 += `
+  <li class="${facilities[i].facility_id}">
+    ${facilities[i].label}
+  </li>
+`;
 
-const contenedor2 = document.querySelector("#precios2");
+  }
 
-const rangos = productDetailData.exploreArea;
+  const contenedor = document.querySelector("#precios");
 
-let html2 = "";
-for (let i = 0; i < rangos.length; i++) {
-  html2 += `
-  <div class="texto_derecha">
-    <div class="lista_precio">
-        <div class="parrafo_derecha">
-            <div class="hotel_derecha2"><span>${rangos[i].name}</span></div> 
-            <div><span>${rangos[i].distance}</span></div>
+  let html = `
+    <div class="contenido_izquierda">
+      <h2>${hotel.hotel_name || ""}</h2>
+
+      <div class="estrella_carta">
+        <img src="${hotel.hotel_img || ""}">
+        <span>${hotel.rating || ""} (${hotel.reviews_count || ""})</span>
+      </div>
+
+      <div class="blue_localizacion">
+        <p>${hotel.address || ""}</p>
+      </div>
+
+      <div class="carta_blanca">
+        <div class="texto_carta">
+          <h3>${hotel.subtitulo || ""}</h3>
+          <p>${hotel.overview_text || ""}</p>
+        </div>
+
+        <div class="linea">
+          <hr>
+        </div>
+
+        <div class="lista">
+          <div class="titulo_carta">
+            <h3>${hotel.top_title || ""}</h3>
+          </div>
+
+          <div class="lista_carta">
+            <div class="listas_carta">
+              <ul>${listaHTML}</ul>
+            </div>
+
+            <div class="listas_carta">
+              <ul>${listaHTML2}</ul>
+            </div>  
+          </div>
+        </div>
+      </div>
     </div>
-    `;
+  `;
+
+  contenedor.innerHTML = html;
 }
 
-contenedor2.innerHTML = html2;
-
-const contenedor3 = document.querySelector("#precios3");
-
-const hotel3 = productDetailData.promoCard;
-
-
-let html3 = "";
-  html3 += `
-        <div class="galeria_global">
-            <div class="galeria">
-              <div class="texto_foto">
-                  <img src="${hotel3.img}">
-                  <p>${hotel3.title}</p>
-                </div>
-              </div>    
-        </div>
-    `;
-
-
-contenedor3.innerHTML = html3;
-
-
-const contenedor4 = document.querySelector("#precios4");
-const hotel4 = productDetailData.rooms;
 
 
 
-let html4 = `<div class="galeria_global">`;
+async function carregarZona() {
 
-    for (let i = 0; i < hotel4.length; i++) {
-  html4 += `
-      <div class="carta_galeria1">
-          <img src="${hotel4[i].img_hab}">
-            <div class="info_galeria1"> 
-              <h3>${hotel4[i].name}</h3>
-              <ul>
-                <li class="bolso_gris">${hotel4.price} ${hotel4.currency}</li>
-                <li class="piscina_gris">Sleeps ${hotel4.sleeps}</li>
-                <li class="like_gris">${hotel4.beds}</li>
-                <li class="boton">${hotel4[i].boton}</li>
-              </ul>
+  let { data } = await client.from("hotel_explore_areas").select("*");
+
+  const contenedor2 = document.querySelector("#precios2");
+
+  let html = "";
+
+  for (let i = 0; i < data.length; i++) {
+    html += `
+      <div class="texto_derecha">
+        <div class="lista_precio">
+          <div class="parrafo_derecha">
+            <div class="hotel_derecha2">
+              <span>${data[i].name || ""}</span>
+            </div> 
+            <div>
+              <span>${data[i].distance || ""}</span>
             </div>
+          </div>
         </div>
+      </div>
     `;
+  }
 
-    }
+  contenedor2.innerHTML = html;
+}
 
-contenedor4.innerHTML = html4;
+
+
+async function carregarPromo() {
+
+  let { data } = await client.from("hotel_promo_cards").select("*").limit(1);
+
+  let promo = data[0];
+
+  const contenedor3 = document.querySelector("#precios3");
+
+  let html = `
+    <div class="galeria_global">
+      <div class="galeria">
+        <div class="texto_foto">
+          <img src="${promo.img || ""}">
+          <p>${promo.title || ""}</p>
+        </div>
+      </div>    
+    </div>
+  `;
+
+  contenedor3.innerHTML = html;
+}
+
+
+async function carregarRooms() {
+
+  let { data } = await client.from("hotel_rooms").select("*");
+
+  const contenedor4 = document.querySelector("#precios4");
+
+  let html = `<div class="galeria_global">`;
+
+  for (let i = 0; i < data.length; i++) {
+
+    html += `
+      <div class="carta_galeria1">
+        <img src="${data[i].img_hab || ""}">
+
+        <div class="info_galeria1"> 
+          <h3>${data[i].name || ""}</h3>
+
+          <ul>
+            <li class="bolso_gris">${data[i].price || ""} ${data[i].currency || ""}</li>
+            <li class="piscina_gris">Sleeps ${data[i].sleeps || ""}</li>
+            <li class="like_gris">${data[i].beds || ""}</li>
+            <li class="boton">${data[i].boton || ""}</li>
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  html += `</div>`;
+
+  contenedor4.innerHTML = html;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregarHotel();
+  carregarZona();
+  carregarPromo();
+  carregarRooms();
+});
+
 
 
 

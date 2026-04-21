@@ -6,7 +6,6 @@ let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 let client = createClient(supabaseUrl, supabaseAnonKey);
 
 
-// 🔹 BUDGET RANGES
 async function carregarBudget() {
 
   let { data, error } = await client.from("filter_budget_ranges").select("*");
@@ -33,7 +32,7 @@ async function carregarBudget() {
 }
 
 
-// 🔹 POPULAR FILTERS
+
 async function carregarPopular() {
 
   let { data, error } = await client.from("filter_populars").select("*");
@@ -60,7 +59,7 @@ async function carregarPopular() {
 }
 
 
-// 🔹 ACTIVIDADES
+
 async function carregarActivitats() {
 
   let { data, error } = await client.from("filter_activities").select("*");
@@ -87,7 +86,7 @@ async function carregarActivitats() {
 }
 
 
-// 🔹 RESULTADOS (HOTELES)
+
 async function carregarResultats() {
 
   let { data, error } = await client.from("hotel_listings").select("*");
@@ -136,7 +135,7 @@ async function carregarResultats() {
 }
 
 
-// 🔥 CARGAR TODO
+
 document.addEventListener("DOMContentLoaded", () => {
   carregarBudget();
   carregarPopular();
