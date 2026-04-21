@@ -1,105 +1,205 @@
-import {checkoutData } from "./data.js";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-const contenedor = document.querySelector("#precios");
+let supabaseUrl = "https://gkzdxpdrphndxvzxnwbz.supabase.co";
+let supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdremR4cGRycGhuZHh2enhud2J6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzNDA5ODcsImV4cCI6MjA5MTkxNjk4N30.mv_304f8c0_LCfcRKPC3ww9TRrTS4stsbKHZg7ARoCM";
 
-const rangos = checkoutData.room;
+let client = createClient(supabaseUrl, supabaseAnonKey);
 
-let html = "";
+
+// 🔹 ROOM
+async function carregarRoom() {
+
+  let { data, error } = await client
+    .from("checkout_room")
+    .select("*")
+    .limit(1);
+
+  if (error) {
+    console.error("ROOM ERROR:", error);
+    return;
+  }
+
+  if (!data || data.length === 0) return;
+
+  const room = data[0];
+  const contenedor = document.querySelector("#precios");
+  if (!contenedor) return;
+
+  contenedor.innerHTML = `
+    <div class="formulario_principal">
+      <div class="main_izquierdo">
+        <div class="formulario1">
+
+          <div class="header_formulario">
+            <p>${room.roomlabel || ""}</p>
+            <span>${room.summary || ""}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+// 🔹 SUMMARY CARD
+async function carregarSummary() {
+
+  let { data, error } = await client
+    .from("checkout_summary")
+    .select("*")
+    .limit(1);
+
+  if (error) {
+    console.error("SUMMARY ERROR:", error);
+    return;
+  }
+
+  if (!data || data.length === 0) return;
+
+  const s = data[0];
+  const contenedor2 = document.querySelector("#precios2");
+  if (!contenedor2) return;
+
+  contenedor2.innerHTML = `
+    <div class="main_derecha">
+      <div class="info_derecha">
+
+        <div>
+          <img src="${s.img || ""}">
+        </div>
+
+        <div class="texto_derecha">
+
+          <div class="titulo_derecha">
+            <h3>${s.hotelname || ""}</h3>
+
+            <div class="estrella_carta">
+              <img src="${s.img_stars || ""}">
+              <span>${s.rating || ""} ${s.reviewscount || ""}</span>
+            </div>
+          </div>
+
+          <div class="fechas_derecha">
+            <div class="texto_rojo">
+              <p>${s.policy || ""}</p>
+            </div>
+
+            <div class="fecha_derecha2">
+              <p>${s.checkin || ""}</p>
+              <p>${s.checkout || ""}</p>
+              <p class="noche">${s.staynights || ""}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+
+// 🔹 PRICE ITEMS
+async function carregarPrices() {
+
+  let { data, error } = await client
+    .from("checkout_price_items")
+    .select("*");
+
+  if (error) {
+    console.error("PRICES ERROR:", error);
+    return;
+  }
+
+  const contenedor3 = document.querySelector("#precios3");
+  if (!contenedor3) return;
+
+  let html = "";
+
+  for (let i = 0; i < (data || []).length; i++) {
+    html += `
+      <div class="habitaciones">
+        <p class="habitacion">${data[i].description || ""}</p>
+        <p class="habitacion">${data[i].amount || ""}</p>
+      </div>
+    `;
+  }
+
+  contenedor3.innerHTML = html;
+}
+
+
+// 🔹 TOTAL
+async function carregarTotal() {
+
+  let { data, error } = await client
+    .from("checkout_price_details")
+    .select("*")
+    .limit(1);
+
+  if (error) {
+    console.error("TOTAL ERROR:", error);
+    return;
+  }
+
+  if (!data || data.length === 0) return;
+
+  const contenedor4 = document.querySelector("#precios4");
+  if (!contenedor4) return;
+
+  contenedor4.innerHTML = `
+    <div class="precio2_info">
+      <div class="total_info">
+        <p class="dinero">${data[0].total || ""}</p>
+      </div>
+    </div>
+  `;
+}
+
+
+// 🔹 POLICY
+async function carregarPolicy() {
+
+  let { data, error } = await client
+    .from("checkout_policy_items")
+    .select("*");
+
+  if (error) {
+    console.error("POLICY ERROR:", error);
+    return;
+  }
+
+  const contenedor5 = document.querySelector("#precios5");
+  if (!contenedor5) return;
+
+  let html = `
+    <div class="lista_form3">
+      <ol>
+  `;
+
+  for (let i = 0; i < (data || []).length; i++) {
+    html += `<li>${data[i].text || ""}</li>`;
+  }
 
   html += `
-  <div class="formulario_principal">
-    <div class="main_izquierdo">
-        <div class="formulario1">
-            <div class="header_formulario">
-                <p>${rangos.roomLabel}</p>
-                <span>${rangos.summary}</span>
-            </div>
-        </div>
+      </ol>
     </div>
-</div>
-    `;
+  `;
 
-
-contenedor.innerHTML = html;
-
-const contenedor2 = document.querySelector("#precios2");
-
-const rangos2 = checkoutData.summaryCard;
-
-let html2 = `<div class="main_derecha">`;
-
-  html2 += `
-      <div class="info_derecha">
-          <div>
-            <img src="${rangos2.img}">
-           </div>
-        <div class="texto_derecha">
-           <div class="titulo_derecha">
-               <h3>${rangos2.hotelName}</h3>
-                    <div class="estrella_carta">
-                        <img src="${rangos2.img_stars}">
-                        <span>${rangos2.rating} ${rangos2.reviewsCount}</span>
-                    </div>
-                </div>
-                <div class="fechas_derecha">
-                    <div class="texto_rojo">
-                       <p>${rangos2.policy}</p>
-                    </div>
-                    <div class="fecha_derecha2">
-                        <p>${rangos2.checkIn}</p>
-                        <p>${rangos2.checkOut}</p>
-                        <p class="noche">${rangos2.stayNights}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-
-
-contenedor2.innerHTML = html2;
-
-
-const contenedor3 = document.querySelector("#precios3");
-const contenedor4 = document.querySelector("#precios4");
-
-const rangos3 = checkoutData.priceDetails.items;
-
-const rangos4 = checkoutData.priceDetails;
-
-let html3 = ``;
-for (let i = 0; i < rangos3.length; i++) {
-  html3 += `
-    <div class="habitaciones">
-       <p class="habitacion">${rangos3[i].description}</p>
-       <p class="habitacion">${rangos3[i].amount}</p>
-    </div>
-    `;
+  contenedor5.innerHTML = html;
 }
 
-let html4 = ``;
-html4 += `
-<div class="precio2_info">
-        <div class="total_info">
-           <p class="dinero">${rangos4.total}</p>
-        </div>
-    </div> 
-`;
-contenedor3.innerHTML = html3;
-contenedor4.innerHTML = html4;
+
+// 🔥 INIT
+document.addEventListener("DOMContentLoaded", () => {
+  carregarRoom();
+  carregarSummary();
+  carregarPrices();
+  carregarTotal();
+  carregarPolicy();
+});
 
 
-const contenedor5 = document.querySelector("#precios5");
-
-const rangos5 = checkoutData.policyItems;
-
-let html5 = `<div class="lista_form3"><ol>`; 
-
-for (let i = 0; i < rangos5.length; i++) {
-  html5 += `<li>${rangos5[i]}</li>`;
-}
-
-html5 += `</ol></div>`; 
-
-contenedor5.innerHTML = html5;
 
 

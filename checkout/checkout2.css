@@ -49,6 +49,7 @@ main {
   display: flex;
   gap: 30px;
   align-items: start;
+  margin-top: 0;
 }
 
 .imagenes_nav {
@@ -100,6 +101,7 @@ main {
   color: #FFFFFF;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  margin-bottom: -320px;
 }
 
 .header_formulario p {
